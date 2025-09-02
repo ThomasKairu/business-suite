@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function HeroSection() {
@@ -61,13 +62,14 @@ export default function HeroSection() {
           </div>
           
           {/* Image Section */}
-          <div className="w-full lg:w-1/2 h-96 lg:h-auto lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-            <div
-              className="w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage: `url('/business.jpg')`
-              }}
-            ></div>
+          <div className="w-full lg:w-1/2 h-96 lg:h-auto lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl relative">
+            <Image
+              src="/business.jpg"
+              alt="Business transformation"
+              fill
+              className="object-cover"
+              priority={false}
+            />
           </div>
         </div>
       </div>
